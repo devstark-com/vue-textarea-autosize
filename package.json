@@ -1,0 +1,58 @@
+{
+  "name": "vue-textarea-autosize",
+  "description": "Vue component provides textarea with automatically adjustable height and without any wrappers and dependencies",
+  "version": "1.0.0",
+  "author": {
+    "name": "Saymon",
+    "email": "saymon.biz@gmail.com"
+  },
+  "keywords": [
+    "vue",
+    "vuejs",
+    "plugin",
+    "textarea",
+    "size",
+    "auto",
+    "autosize",
+    "height"
+  ],
+  "license": "MIT",
+  "main": "dist/vue-textarea-autosize.common.js",
+  "unpkg": "dist/vue-textarea-autosize.browser.js",
+  "module": "index.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack --config config/webpack.config.dev.js --progress --watch",
+    "build": "npm run build:browser && npm run build:common",
+    "build:browser": "cross-env NODE_ENV=production webpack --config config/webpack.config.browser.js --progress --hide-modules",
+    "build:common": "cross-env NODE_ENV=production webpack --config config/webpack.config.common.js --progress --hide-modules",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devstark-com/vue-textarea-autosize.git"
+  },
+  "bugs": {
+    "url": "https://github.com/devstark-com/vue-textarea-autosize/issues"
+  },
+  "homepage": "https://github.com/devstark-com/vue-textarea-autosize#readme",
+  "devDependencies": {
+    "babel-core": "^6.0.0",
+    "babel-eslint": "^7.1.1",
+    "babel-loader": "^6.0.0",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "cross-env": "^3.1.3",
+    "css-loader": "^0.26.1",
+    "eslint": "^3.12.1",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-loader": "^1.6.1",
+    "eslint-plugin-html": "^1.6.0",
+    "eslint-plugin-promise": "^3.4.0",
+    "eslint-plugin-standard": "^2.0.1",
+    "extract-text-webpack-plugin": "^2.0.0-beta.4",
+    "vue-loader": "^10.0.0",
+    "vue-template-compiler": "^2.1.6",
+    "webpack": "^2.1.0-beta.28",
+    "webpack-merge": "^1.1.2"
+  }
+}
