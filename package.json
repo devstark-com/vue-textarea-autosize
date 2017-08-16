@@ -1,7 +1,7 @@
 {
   "name": "vue-textarea-autosize",
   "description": "Vue component provides textarea with automatically adjustable height and without any wrappers and dependencies",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": {
     "name": "Saymon",
     "email": "saymon.biz@gmail.com"
