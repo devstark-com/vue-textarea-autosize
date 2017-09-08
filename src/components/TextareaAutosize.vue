@@ -126,7 +126,7 @@ export default {
      * Emit input event as in https://vuejs.org/v2/guide/components.html#Form-Input-Components-using-Custom-Events
      */
     val (val) {
-      this.resize()
+      this.$nextTick(this.resize)
       this.$emit('input', val)
     }
   }
