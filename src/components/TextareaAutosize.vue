@@ -23,7 +23,6 @@ export default {
      */
     value: {
       type: [String, Number],
-      required: false,
       default: ''
     },
 
@@ -32,7 +31,6 @@ export default {
      */
     autosize: {
       type: Boolean,
-      required: false,
       default: true
     },
 
@@ -41,7 +39,6 @@ export default {
      */
     minHeight: {
       type: [Number],
-      required: false,
       'default': null
     },
 
@@ -50,8 +47,15 @@ export default {
      */
     maxHeight: {
       type: [Number],
-      required: false,
       'default': null
+    },
+
+    /*
+     * Force !important for style properties
+     */
+    important: {
+      type: [Boolean, Array],
+      default: false
     }
   },
 
@@ -71,13 +75,28 @@ export default {
       let objStyles = {}
 
       if (this.autosize) {
-        objStyles.resize = 'none'
+        objStyles.resize = !this.isResizeImportant ? 'none' : 'none !important'
         if (!this.maxHeightScroll) {
-          objStyles.overflow = 'hidden'
+          objStyles.overflow = !this.isOverflowImportant ? 'hidden' : 'hidden !important'
         }
       }
 
       return objStyles
+    },
+
+    isResizeImportant () {
+      const imp = this.important
+      return imp === true || (Array.isArray(imp) && imp.includes('resize'))
+    },
+
+    isOverflowImportant () {
+      const imp = this.important
+      return imp === true || (Array.isArray(imp) && imp.includes('overflow'))
+    },
+
+    isHeightImportant () {
+      const imp = this.important
+      return imp === true || (Array.isArray(imp) && imp.includes('height'))
     }
   },
 
@@ -93,7 +112,10 @@ export default {
      * Auto resize textarea by height
      */
     resize: function () {
-      this.$el.style.height = 'auto'
+      const important = this.isHeightImportant ? 'important' : undefined
+
+      this.$el.style.setProperty('height', 'auto', important)
+
       let contentHeight = this.$el.scrollHeight + 1
 
       if (this.minHeight) {
@@ -109,7 +131,8 @@ export default {
         }
       }
 
-      this.$el.style.height = contentHeight + 'px'
+      const heightVal = contentHeight + 'px'
+      this.$el.style.setProperty('height', heightVal, important)
       return this
     }
   },
