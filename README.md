@@ -14,7 +14,7 @@ Vue component provides textarea with automatically adjustable height and without
 Note
 
 - You are able to handle all native events via `@eventname.native` [read more](https://vuejs.org/v2/guide/components.html#Binding-Native-Events-to-Components)
-- There is no any CSS from box, so you are free to style it as you wish
+- There is no CSS from box, so you are free to style it as you wish
 
 # Install
 
@@ -76,7 +76,7 @@ this.$refs.someName.$el.select()
 
 ### Slots
 
-There is no any slots available
+There are no slots available
 
 ---
 
