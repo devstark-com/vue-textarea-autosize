@@ -112,7 +112,7 @@ export default {
      * Auto resize textarea by height
      */
     resize: function () {
-      const important = this.isHeightImportant ? 'important' : undefined
+      const important = this.isHeightImportant ? 'important' : ''
 
       this.$el.style.setProperty('height', 'auto', important)
 
