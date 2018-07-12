@@ -1,5 +1,6 @@
 <template>
   <textarea
+    rows="1"
     @focus="resize"
     v-model="val"
     :style="computedStyles"
