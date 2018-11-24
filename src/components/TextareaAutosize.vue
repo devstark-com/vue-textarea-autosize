@@ -1,7 +1,7 @@
 <template>
   <textarea
     @focus="resize"
-    v-on="$listeners"
+    v-on="listeners"
     v-model="val"
     :style="computedStyles"
   ></textarea>
@@ -98,6 +98,12 @@ export default {
     isHeightImportant () {
       const imp = this.important
       return imp === true || (Array.isArray(imp) && imp.includes('height'))
+    },
+    listeners () {
+      return {
+        ...this.$listeners,
+        input: event => this.$emit('input', event.target.value)
+      }
     }
   },
 
