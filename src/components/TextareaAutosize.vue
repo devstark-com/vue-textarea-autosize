@@ -1,6 +1,7 @@
 <template>
   <textarea
     @focus="resize"
+    v-on="$listeners"
     v-model="val"
     :style="computedStyles"
   ></textarea>
