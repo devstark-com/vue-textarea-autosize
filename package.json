@@ -1,7 +1,7 @@
 {
   "name": "vue-textarea-autosize",
   "description": "Vue component provides textarea with automatically adjustable height and without any wrappers and dependencies",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "author": {
     "name": "Saymon",
     "email": "saymon.biz@gmail.com"
@@ -17,14 +17,14 @@
     "prepublish": "vue-cli-service lint && vue-cli-service docs --mode build && vue-cli-service build",
     "start": "vue-cli-service serve"
   },
-  "main": "dist/textarea-autosize.common.js",
-  "module": "dist/textarea-autosize.esm.js",
-  "unpkg": "dist/textarea-autosize.umd.min.js",
+  "main": "dist/vue-textarea-autosize.common.js",
+  "module": "dist/vue-textarea-autosize.esm.js",
+  "unpkg": "dist/vue-textarea-autosize.umd.min.js",
   "files": [
-    "dist/textarea-autosize.common.js",
-    "dist/textarea-autosize.umd.min.js",
-    "dist/textarea-autosize.umd.js",
-    "dist/textarea-autosize.esm.js",
+    "dist/vue-textarea-autosize.common.js",
+    "dist/vue-textarea-autosize.umd.min.js",
+    "dist/vue-textarea-autosize.umd.js",
+    "dist/vue-textarea-autosize.esm.js",
     "src"
   ],
   "dependencies": {
