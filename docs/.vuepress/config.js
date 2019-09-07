@@ -6,8 +6,8 @@ module.exports = {
   locales: {
     '/': {
       lang: 'en-US',
-      title: 'TextareaAutosize',
-      description: 'TextareaAutosize for Vue.js'
+      title: 'VueTextareaAutosize',
+      description: 'TextareaAutosize plugin for Vue.js'
     }
   },
   themeConfig: {
@@ -23,8 +23,8 @@ module.exports = {
           link: 'https://github.com/devstark-com/vue-textarea-autosize/releases'
         }],
         sidebar: [
-          '/installation.md',
-          '/started.md',
+          '/',
+          '/guide.md'
         ]
       }
     }
