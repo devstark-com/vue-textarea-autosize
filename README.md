@@ -13,28 +13,28 @@ Vue component provides textarea with automatically adjustable height and without
 
 Note
 
-- You are able to handle all native events via `@eventname.native` [read more](https://vuejs.org/v2/guide/components.html#Binding-Native-Events-to-Components)
-- There is no CSS from box, so you are free to style it as you wish
+- You are able to handle all native events with `.native` modifier [read more](https://vuejs.org/v2/guide/components.html#Binding-Native-Events-to-Components)
+- You are able to use native attrs like this `<textarea-autosize rows="1" ... />`
+- There is no CSS out of the box, so you feel free to style it as you wish
 
 # Install
 
 Install with npm
 ```
-npm install vue-textarea-autosize --save
+npm i -S vue-textarea-autosize
 ```
 or with yarn
 ```
 yarn add vue-textarea-autosize
 ```
 
-## Adding into app
+## Add to your app
 
-In your main.js
 ```js
 import Vue from 'vue'
-import VueTextareaAutosize from 'vue-textarea-autosize'
+import TextareaAutosize from 'vue-textarea-autosize'
 
-Vue.use(VueTextareaAutosize)
+Vue.use(TextareaAutosize)
 ```
 
 # Usage
@@ -43,19 +43,19 @@ In components
 ```html
 <textarea-autosize
   placeholder="Type something here..."
-  ref="someName"
-  v-model="someValue"
+  ref="myTextarea"
+  v-model="value"
   :min-height="30"
   :max-height="350"
   @blur.native="onBlurTextarea"
-></textarea-autosize>
+/>
 ```
 
 Focus/blur or select content in components
 ```js
-this.$refs.someName.$el.focus()
-this.$refs.someName.$el.blur()
-this.$refs.someName.$el.select()
+this.$refs.myTextarea.$el.focus()
+this.$refs.myTextarea.$el.blur()
+this.$refs.myTextarea.$el.select()
 ```
 
 # Interface
@@ -64,15 +64,18 @@ this.$refs.someName.$el.select()
 
 | Props            | Required  | Type            | Default   | Description  |
 | ---------------- | --------- | --------------- | --------- | -------------|
-| autosize         | false     | Boolean         | true      | allow to enable/disable auto resizing dynamically |
-| minHeight        | false     | Number          | null      | min textarea height |
-| maxHeight        | false     | Number          | null      | max textarea height |
+| `v-model`          | no     | String, Number  | ''        | value binding |
+| `value` | no | String, Number | '' | part of the `v-model` binding |
+| `autosize`         | no     | Boolean         | true      | allow to enable/disable auto resizing dynamically |
+| `minHeight`        | no     | Number          | null      | min textarea height |
+| `maxHeight`        | no     | Number          | null      | max textarea height |
+| `important` | no | Boolean, Array | false | Force !important for style properties e.g. when using [http://cleanslatecss.com/](http://cleanslatecss.com/). Allowed values: `true`, `false`, all or some of `['resize', 'overflow', 'height']`|
 
 ### Events
 
 | Name      | Params   | Description  |
 | ----------|:---------|--------------|
-| input     | value    | fires on textarea content changed. part of a `v-model` binding. [read more](https://vuejs.org/v2/guide/components.html#Form-Input-Components-using-Custom-Events) |
+| input     | value    | fires on textarea content changed. part of the `v-model` binding. [read more](https://vuejs.org/v2/guide/components.html#Form-Input-Components-using-Custom-Events) |
 
 ### Slots
 
@@ -83,4 +86,3 @@ There are no slots available
 ## License
 
 [MIT](http://opensource.org/licenses/MIT)
-
