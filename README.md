@@ -5,6 +5,9 @@
 
 Vue component provides textarea with automatically adjustable height and without any wrappers and dependencies
 
+# Demo
+[DEMO](https://codesandbox.io/s/vuetextareaautosize-demo-vikj3?fontsize=14)
+
 # Finctionality
 
 - `v-model` binding in parent
