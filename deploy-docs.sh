@@ -21,8 +21,3 @@ git commit -m 'deploy'
 
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
 git push -f git@github.com:devstark-com/vue-textarea-autosize.git master:gh-pages
-
-cd ../
-rm -R dist
-
-cd -
