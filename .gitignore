@@ -4,7 +4,7 @@ public
 dist/*.gz
 dist/*.map
 coverage
-docs/.vuepress/dist
+# docs/.vuepress/dist
 
 # local env files
 .env.local
@@ -23,4 +23,3 @@ docs/.vuepress/dist
 *.njsproj
 *.sln
 *.sw*
-  
