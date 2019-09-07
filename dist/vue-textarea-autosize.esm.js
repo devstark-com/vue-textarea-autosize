@@ -1,5 +1,5 @@
 /*!
- * vue-textarea-autosize v1.1.0 
+ * vue-textarea-autosize v1.1.1 
  * (c) 2019 Saymon
  * Released under the MIT License.
  */
@@ -240,7 +240,7 @@ var __vue_staticRenderFns__ = [];
     undefined
   );
 
-var version = '1.1.0';
+var version = '1.1.1';
 
 var install = function install(Vue) {
   Vue.component('TextareaAutosize', TextareaAutosize);
