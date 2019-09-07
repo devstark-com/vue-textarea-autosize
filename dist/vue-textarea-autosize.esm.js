@@ -3,8 +3,6 @@
  * (c) 2019 Saymon
  * Released under the MIT License.
  */
-'use strict';
-
 //
 //
 //
@@ -257,4 +255,4 @@ if (typeof window !== 'undefined' && window.Vue) {
   window.Vue.use(plugin);
 }
 
-module.exports = plugin;
+export default plugin;

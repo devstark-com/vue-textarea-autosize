@@ -1,36 +1,17 @@
 import TextareaAutosize from './components/TextareaAutosize.vue'
+const version = '__VERSION__'
 
-// Install the components
-export function install (Vue) {
-  Vue.component('textarea-autosize', TextareaAutosize)
-  /* -- Add more components here -- */
+const install = Vue => {
+  Vue.component('TextareaAutosize', TextareaAutosize)
 }
 
-// Expose the components
-export {
-  TextareaAutosize
-  /* -- Add more components here -- */
-}
-
-/* -- Plugin definition & Auto-install -- */
-/* You shouldn't have to modify the code below */
-
-// Plugin
 const plugin = {
-  /* eslint-disable no-undef */
-  version: VERSION,
-  install
+  install,
+  version
 }
 
 export default plugin
 
-// Auto-install
-let GlobalVue = null
-if (typeof window !== 'undefined') {
-  GlobalVue = window.Vue
-} else if (typeof global !== 'undefined') {
-  GlobalVue = global.Vue
-}
-if (GlobalVue) {
-  GlobalVue.use(plugin)
+if (typeof window !== 'undefined' && window.Vue) {
+  window.Vue.use(plugin)
 }
