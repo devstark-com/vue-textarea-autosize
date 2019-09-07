@@ -1,5 +1,5 @@
 module.exports = {
-  base: '/vue-textarea-autosize/dist/',
+  base: '/vue-textarea-autosize/',
   plugins: [
     require('./plugin.js')
   ],
