@@ -3,6 +3,7 @@
     :style="computedStyles"
     v-model="val"
     @focus="resize"
+    v-on="$listeners"
   ></textarea>
 </template>
 <script>
