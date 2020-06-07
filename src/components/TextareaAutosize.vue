@@ -104,6 +104,8 @@ export default {
 
         const heightVal = contentHeight + 'px'
         this.height = `${heightVal}${important ? ' !important' : ''}`
+
+        this.$emit('resize', contentHeight)
       })
 
       return this

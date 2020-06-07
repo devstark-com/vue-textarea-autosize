@@ -58,6 +58,7 @@ this.$refs.myTextarea.$el.select()
 | Name      | Params   | Description  |
 | ----------|:---------|--------------|
 | input     | value    | fires on textarea content changed. part of the `v-model` binding. [read more](https://vuejs.org/v2/guide/components.html#Form-Input-Components-using-Custom-Events) |
+| resize    | new height in px | fires on resize |
 
 ### Slots
 
