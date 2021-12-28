@@ -1,7 +1,8 @@
 <template>
   <textarea
     :style="computedStyles"
-    v-model="val"
+    :value="value"
+    @input="$emit('input', $event.target.value)"
     @focus="resize"
   ></textarea>
 </template>
@@ -35,8 +36,6 @@ export default {
   },
   data () {
     return {
-      // data property for v-model binding with real textarea tag
-      val: null,
       // works when content height becomes more then value of the maxHeight property
       maxHeightScroll: false,
       height: 'auto'
@@ -65,12 +64,8 @@ export default {
     }
   },
   watch: {
-    value (val) {
-      this.val = val
-    },
-    val (val) {
+    value () {
       this.$nextTick(this.resize)
-      this.$emit('input', val)
     },
     minHeight () {
       this.$nextTick(this.resize)
@@ -108,9 +103,6 @@ export default {
 
       return this
     }
-  },
-  created () {
-    this.val = this.value
   },
   mounted () {
     this.resize()
